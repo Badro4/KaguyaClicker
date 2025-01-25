@@ -1,0 +1,115 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    background-image: url("/WebProjects/images/téléchargé.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+p {
+    color: white;
+}
+main {
+    margin: 20px;
+}
+.navbar {
+    display: flex;
+    justify-content:space-between;
+    background: linear-gradient(90deg, #44277d, #551fa593);
+    margin: 0;
+
+}
+.navbar ul {
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 30px;
+    float: left;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    margin: 0;
+}
+
+.navbar a:hover {
+    background-color: #895c9b;
+    transform: scale(1.05);
+}
+
+.navimg {
+    height: 82.9px;
+    width: auto;
+    filter: drop-shadow(5px 0px 5px #222); 
+}
+
+.clickableDiv {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    gap: 50px;
+}
+
+.window {
+    border: 2px solid #333; /* Bordure de la boîte */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espace intérieur */
+    margin: 20px 0; /* Marge extérieure */
+    background-size: cover;
+    color: #ffffff;
+    min-width: 200px;
+    max-width: 200px; /* Largeur maximale */
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Disposition verticale */
+    transition: transform 0.3s ease;
+    text-align: center;
+    
+}
+
+.window:hover {
+    transform: scale(1.03);
+}
+
+.windowTitle, .windowDesc {
+    text-shadow: 1px 0 #000000, -1px 0 #000000, 0 1px #000000, 0 -1px #000000;
+}
+
+.bottom-right-iroha {
+        position: fixed; /* Fixe l'image par rapport à la fenêtre du navigateur */
+        bottom: -150px; /* Distance depuis le bas */
+        right: -40px; /* Distance depuis la gauche */
+        height: 500px;
+        z-index: 1000; /* Assure que l'image est au-dessus des autres éléments */
+        transition: all 0.3s ease;
+        filter: drop-shadow(5px 0px 5px #ffffff); 
+}
+
+.bottom-right-iroha:hover {
+    transform: scale(1.1);
+}
+
+.nijika {
+    background-image: url("/WebProjects/images/Nijika3.png");
+    box-shadow: 7px 7px 10px rgba(178, 178, 178, 0.897);    
+}
+
+.kaguya {
+    background-image: url(https://i.ytimg.com/vi/dUMKQ0-o0zI/mqdefault.jpg);
+    background-position: center;
+    box-shadow: 7px 7px 10px rgba(236, 162, 229, 0.752);    
+
+}

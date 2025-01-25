@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nijika Drumming</title>
+  <link rel="stylesheet" href="drums.css">
+  <link rel="icon" href="https://fav.farm/🥁" />
+</head>
+<body>
+  <a href="index.html" class="home-button">Return to Home Page</a>
+  <div class="keys">
+    <div data-key="a" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="s" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="d" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="f" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="g" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="h" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="j" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="k" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="l" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+  
+
+  <audio data-key="a" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/clap.wav"></audio>
+  <audio data-key="s" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/hihat.wav"></audio>
+  <audio data-key="d" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/kick.wav"></audio>
+  <audio data-key="f" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/openhat.wav"></audio>
+  <audio data-key="g" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/boom.wav"></audio>
+  <audio data-key="h" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/ride.wav"></audio>
+  <audio data-key="j" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/snare.wav"></audio>
+  <audio data-key="k" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/tom.wav"></audio>
+  <audio data-key="l" src="/WebProjects/JavaScript30/JavaScript30-master/01 - JavaScript Drum Kit/sounds/tink.wav"></audio>
+
+<script>
+  window.addEventListener('keydown', function(e){
+      let key = e.key.toLowerCase()
+      const note = this.document.querySelector(`audio[data-key="${key}"]`);
+      const bouton = this.document.querySelector(`div[data-key="${key}"]`)
+      if(!note) return;
+      note.volume=0.2;
+      bouton.classList.add("playing")
+      note.play();
+      note.addEventListener('ended', function () {
+        bouton.classList.remove("playing")
+      })
+  })
+</script>
+
+
+</body>
+</html>

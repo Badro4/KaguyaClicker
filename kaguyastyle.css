@@ -1,0 +1,180 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.home-button {
+    text-decoration: none;
+}
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.kaguya-container {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le centrage */
+}
+
+.kaguya {
+    width: 150px; /* Largeur de l'image */
+    height: auto; /* Hauteur automatique */
+    cursor: pointer; /* Change le curseur en pointeur */
+    transition: transform 0.3s ease; /* Animation fluide */
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.kaguya:hover {
+    transform: scale(1.1); /* Légère mise à l'échelle au survol */
+}
+.kaguya:hover {
+    transform: scale(1.2);
+}
+
+.score {
+    margin-top: 20px; /* Espace entre l'image et le score */
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.plus-one {
+    position: absolute;
+    top: 50%; /* Position initiale (au centre de l'image) */
+    left: 130%; /* Position initiale (au centre de l'image) */
+    transform: translate(-50%, -50%); /* Centre le "+1" */
+    font-size: 1.2rem;
+    color: rgb(192, 44, 203);
+    font-weight: bold;
+    opacity: 0; /* Démarre invisible */
+    animation: floatUp 1s ease-out; /* Animation pour faire monter et disparaître */
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%); /* Monte et disparaît */
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 1px black;
+    width: fit-content;
+    padding: 15px;
+}
+
+#message-box {
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+    font-size: 1rem;
+
+  }
+  
+#erin-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#stop-music {
+    position: absolute;
+    top: 200px;
+    right: 30px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: pink;
+    transition: transform 0.3s ease;
+}
+#stop-music:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.erin-gif {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 300px;
+    height: auto;
+    border: solid 1px black;
+}
+  
+
+/* Ajout d'une transition globale */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Light Mode (par défaut) */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+body.light-mode .kaguya {
+    border: solid 2px #000000;
+}
+
+body.light-mode .score {
+    color: #333;
+}
+
+body.light-mode #theme-toggle {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode .kaguya {
+    border: solid 2px #ffffff;
+}
+
+body.dark-mode .score {
+    color: #f0f0f0;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Bouton de bascule du thème */
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* Animation fluide pour le score */
+.score {
+    font-size: 1.5rem;
+    transition: color 0.5s ease;
+}
