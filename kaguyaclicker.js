@@ -91,7 +91,7 @@ image.addEventListener('click', function() {
     boom.play()
 
     // Change la source de l'image pour le GIF animé
-    image.src = "/WebProjects/images/explode300.gif";
+    image.src = "images/explode300.gif";
 
     const plusOne = document.createElement('span');
     plusOne.classList.add('plus-one');
