@@ -99,9 +99,9 @@ function applyUpgrade(upgrade) {
 
                 // Vérifie l'image actuelle et change le GIF en conséquence
                 if (image.src.includes("kaguya-boom.png")) {
-                    image.src = "/images/explode300.gif"; // GIF pour Kaguya
+                    image.src = "images/explode300.gif"; // GIF pour Kaguya
                 } else if (image.src.includes("mokou.png")) {
-                    image.src = "/images/mokouboom.gif"; // GIF pour Mokou
+                    image.src = "images/mokouboom.gif"; // GIF pour Mokou
                 }
             }, 420)
 
@@ -150,9 +150,9 @@ image.addEventListener('click', function () {
     // Détermine quel GIF jouer en fonction de l'image actuelle
     let explodeGif;
     if (image.src.includes("kaguya-boom.png") || image.src.includes("explode300.gif")) {
-        explodeGif = "/images/explode300.gif"; // GIF pour l'image de base
+        explodeGif = "images/explode300.gif"; // GIF pour l'image de base
     } else if (image.src.includes("mokou.png") || image.src.includes("boom.gif")) {
-        explodeGif = "/images/mokouboom.gif"; // GIF pour l'image alternative
+        explodeGif = "images/mokouboom.gif"; // GIF pour l'image alternative
     }
 
     // Change la source de l'image pour le GIF animé
@@ -175,7 +175,7 @@ image.addEventListener('click', function () {
         if (explodeGif.includes("explode300.gif")) {
             image.src = "https://media.tenor.com/Xk-mBqoSLX0AAAAe/kaguya-boom.png"; // Image de base
         } else if (explodeGif.includes("boom.gif")) {
-            image.src = "/images/mokou.png"; // Image alternative
+            image.src = "images/mokou.png"; // Image alternative
         }
         isAnimating = false; // Réactive les clics
     }, 450); // Délai correspondant à la durée du GIF (en millisecondes)
@@ -199,7 +199,7 @@ const changeKaguyaButton = document.getElementById('change-kaguya');
 const kaguyaImage = document.getElementById('kaguya');     
 const kaguyaImages = [
         "https://media.tenor.com/Xk-mBqoSLX0AAAAe/kaguya-boom.png", // Image par défaut
-        "/images/mokou.png", 
+        "images/mokou.png", 
       ];
 let currentImageIndex = 0;
 
