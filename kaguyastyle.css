@@ -69,7 +69,8 @@
     justify-content: center;
     border: solid 1px black;
     width: fit-content;
-    padding: 15px;
+    padding: 8px;
+    margin: 5px;
 }
 
 #message-box {
@@ -84,6 +85,39 @@
     position: absolute;
     right: 10px;
     top: 10px;
+}
+
+.erin-gif {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 300px;
+    height: auto;
+    border: solid 1px black;
+}
+
+#bunny-container {
+    position: absolute;
+    left: 32%;
+    top: 39%;
+}
+
+.reisen-gif {    
+    width: 150px;
+    height: auto;
+}
+
+#yuyuko-container {
+    position: absolute;
+    left: 45%; /* Ajustez cette valeur pour positionner Yuyuko à côté de Kaguya */
+    top: 35%; /* Ajustez cette valeur pour aligner verticalement */
+    transform: translate(-50%, -50%); /* Centre le conteneur */
+}
+
+.yuyuko-gif {
+    width: 100px; /* Ajustez la taille du GIF */
+    height: auto;
+    border-radius: 10px; /* Optionnel : arrondit les coins */
 }
 
 .hidden {
@@ -104,17 +138,8 @@
     cursor: pointer;
 }
 
-.erin-gif {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 300px;
-    height: auto;
-    border: solid 1px black;
-}
-  
 
-/* Ajout d'une transition globale */
+  
 body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -152,15 +177,19 @@ body.dark-mode .score {
     color: #f0f0f0;
 }
 
+body.dark-mode .item {
+    border: 1px solid #f0f0f0;
+}
+
+
 body.dark-mode #theme-toggle {
     background-color: #fff;
     color: #333;
 }
 
-/* Bouton de bascule du thème */
 #theme-toggle {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     right: 10px;
     padding: 10px 15px;
     border: none;
@@ -173,8 +202,49 @@ body.dark-mode #theme-toggle {
     transform: scale(1.05);
 }
 
-/* Animation fluide pour le score */
 .score {
     font-size: 1.5rem;
     transition: color 0.5s ease;
+}
+
+#change-kaguya {
+    position: absolute;
+    bottom: 60px; 
+    right: 10px;
+    padding: 10px 15px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#change-kaguya:hover {
+    transform: scale(1.05);
+}
+
+#jumpscare-container {
+    position: fixed; /* Fixe le conteneur à l'écran */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-color: black; /* Fond noir pour plus d'effet */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    z-index: 1000; /* Assure que le jumpscare est au-dessus de tout */
+    opacity: 0; /* Démarre invisible */
+    transition: opacity 0.1s ease; /* Transition pour l'apparition et la disparition */
+    pointer-events: none;
+}
+
+#jumpscare-container.active {
+    opacity: 1; /* Rend le jumpscare visible */
+}
+
+.jumpscare-image {
+    max-width: 100%; /* Prend toute la largeur disponible */
+    max-height: 100%; /* Prend toute la hauteur disponible */
+    object-fit: contain; /* Ajuste l'image à l'écran sans la déformer */
 }
