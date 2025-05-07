@@ -324,3 +324,71 @@ body.yukari::before {
 body.yukari.active::before {
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+    /* Make the game container use a column layout on mobile */
+    .game-container {
+      flex-direction: column;
+    }
+    
+    /* Keep Kaguya centered */
+    .kaguya-container {
+      position: fixed; /* Keep Kaguya fixed in center */
+      top: 40%;       /* Slightly above center to leave room for shop */
+      z-index: 100;   /* Ensure Kaguya is above other elements */
+    }
+    
+    /* Position the shop below Kaguya */
+    .shop {
+      position: fixed;
+      bottom: 80px;   /* Position from bottom to avoid controls */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;     /* Use more width on mobile */
+      max-width: 280px;
+      max-height: 200px;
+      overflow-y: auto;  /* Make scrollable if needed */
+      z-index: 90;    /* Below Kaguya */
+    }
+    
+    /* Ensure controls remain accessible */
+    .controls {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 200;
+    }
+    
+    /* Make the score more visible */
+    .score-container {
+      position: fixed;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      z-index: 150;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+    
+    /* Make Kaguya slightly smaller on mobile */
+    .kaguya {
+      width: 120px;
+    }
+    
+    /* Adjust special characters for mobile */
+    #erin-container {
+      right: 5px;
+      top: 5px;
+    }
+    
+    .erin-gif {
+      width: 150px;
+    }
+    
+    /* Hide these on very small screens */
+    @media (max-width: 480px) {
+      #yuyuko-container, #bunny-container {
+        display: none; 
+      }
+    }
+  }
