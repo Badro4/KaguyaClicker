@@ -325,72 +325,110 @@ body.yukari.active::before {
     opacity: 1;
 }
 
+/* Remplacez l'intégralité de la section @media par celle-ci */
 @media (max-width: 768px) {
-    /* Make the game container use a column layout on mobile */
+    body {
+        min-height: 100vh;
+        overflow-y: auto; /* Permet le défilement vertical */
+    }
+    
+    /* Configuration du conteneur principal en colonne */
     .game-container {
-      flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 350px; /* Espace pour le shop en dessous */
     }
     
-    /* Keep Kaguya centered */
+    /* Positionnement de Kaguya */
     .kaguya-container {
-      position: fixed; /* Keep Kaguya fixed in center */
-      top: 40%;       /* Slightly above center to leave room for shop */
-      z-index: 100;   /* Ensure Kaguya is above other elements */
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 120px auto;
+        z-index: 10;
     }
     
-    /* Position the shop below Kaguya */
+    /* Positionnement du shop en dessous */
     .shop {
-      position: fixed;
-      bottom: 80px;   /* Position from bottom to avoid controls */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;     /* Use more width on mobile */
-      max-width: 280px;
-      z-index: 90;    /* Below Kaguya */
+        position: relative;
+        margin: 20px auto 80px auto;
+        width: 90%;
+        max-width: 280px;
+        z-index: 5;
     }
     
-    /* Ensure controls remain accessible */
+    /* Les contrôles restent accessibles */
     .controls {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      z-index: 200;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 200;
     }
     
-    /* Make the score more visible */
+    /* Score toujours visible */
     .score-container {
-      position: fixed;
-      top: 10px;
-      left: 0;
-      width: 100%;
-      z-index: 150;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px;
+        position: fixed;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        z-index: 150;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px;
     }
     
-    /* Make Kaguya slightly smaller on mobile */
+    /* Kaguya légèrement plus petite sur mobile */
     .kaguya {
-      width: 120px;
+        width: 120px;
     }
     
-    /* Adjust special characters for mobile */
+    /* Ajustement du Erin container */
     #erin-container {
-      right: 5px;
-      top: 5px;
+        position: fixed;
+        right: 5px;
+        top: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
     
     .erin-gif {
-      width: 150px;
+        width: 150px;
     }
 
+    /* Bouton stop music sous le Erin container */
     #stop-music {
-        position: absolute;
-        top: 100px;
-        right: 30px;
+        position: relative;
+        top: 160px;
+        right: 5px;
         width: 100px;
         border-radius: 10px;
         background-color: pink;
         transition: transform 0.3s ease;
     }
     
+    /* Positionnement correct de Yuyuko */
+    #yuyuko-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-120%, 20%);
+    }
+    
+    /* Positionnement correct de Reisen */
+    #bunny-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-120%, -120%);
+    }
+    
+    /* Message box toujours visible */
+    #message-box {
+        position: fixed;
+        bottom: 40px;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
 }
