@@ -346,8 +346,6 @@ body.yukari.active::before {
       transform: translateX(-50%);
       width: 90%;     /* Use more width on mobile */
       max-width: 280px;
-      max-height: 200px;
-      overflow-y: auto;  /* Make scrollable if needed */
       z-index: 90;    /* Below Kaguya */
     }
     
@@ -384,11 +382,15 @@ body.yukari.active::before {
     .erin-gif {
       width: 150px;
     }
-    
-    /* Hide these on very small screens */
-    @media (max-width: 480px) {
-      #yuyuko-container, #bunny-container {
-        display: none; 
-      }
+
+    #stop-music {
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        width: 100px;
+        border-radius: 10px;
+        background-color: pink;
+        transition: transform 0.3s ease;
     }
-  }
+    
+}
