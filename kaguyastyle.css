@@ -1,0 +1,326 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./images/symbol-scatter-haikei.svg");
+    background-size: cover;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header {
+    transition: background-color 0.5s ease, color 0.5s ease;
+    margin-bottom: 10px;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.kaguya-container {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.kaguya {
+    width: 150px; 
+    height: auto; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+    border-radius: 15px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.kaguya:hover {
+    transform: scale(1.1); /* Légère mise à l'échelle au survol */
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    margin-top: 10px;
+}
+
+
+.plus-one {
+    position: absolute;
+    top: 50%; /* Position initiale (au centre de l'image) */
+    left: 130%; /* Position initiale (au centre de l'image) */
+    transform: translate(-50%, -50%); /* Centre le "+1" */
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: bold;
+    animation: floatUp 1s ease-out; /* Animation pour faire monter et disparaître */
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%); /* Monte et disparaît */
+    }
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #f07b96;
+    width: 280px;
+    background-color: hsl(322, 18%, 29%, 0.7);
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    margin-right: 10px;
+    margin-left: 010px;
+}
+
+#shopContainer.hidden {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#shopContainer.fade-in {
+    opacity: 1;
+}
+
+.shop h2 {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 8px;
+    width: 250px;
+    align-items: center;
+    background-image: url("./images/low-poly-grid-haikei.svg");
+    background-size: cover;
+    padding: 8px;
+    margin: 5px;
+    color: black;
+}
+
+.item .desc {
+    color: white;
+}
+
+.item .cost {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.item button {
+    background-color: hsla(323, 71%, 88%, 0.5);
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    width: 75px;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(45, 45, 45);
+    transition: transform 0.1s ease;
+}
+
+.item button:hover {
+    transform: scale(1.1);
+    background-color: hsla(324, 29%, 67%, 0.5);
+}
+
+#message-box {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    z-index: 1000;
+  }
+  
+#erin-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.erin-gif {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 300px;
+    height: auto;
+    border: solid 1px black;
+}
+
+#bunny-container {
+    position: absolute;
+    left: 32%;
+    top: 43%;
+}
+
+.reisen-gif {    
+    width: 150px;
+    height: auto;
+}
+
+#yuyuko-container {
+    position: absolute;
+    left: 45vw; /* Ajustez cette valeur pour positionner Yuyuko à côté de Kaguya */
+    top: 35vh; /* Ajustez cette valeur pour aligner verticalement */
+    transform: translate(-50%, -50%); /* Centre le conteneur */
+}
+
+.yuyuko-gif {
+    width: auto;
+    height: 200px;
+    border-radius: 10px; /* Optionnel : arrondit les coins */
+}
+
+.hidden {
+    display: none;
+}
+
+#stop-music {
+    position: absolute;
+    top: 200px;
+    right: 30px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: pink;
+    transition: transform 0.3s ease;
+}
+#stop-music:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+#theme-toggle {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+
+#change-kaguya {
+    position: absolute;
+    bottom: 60px; 
+    right: 10px;
+    padding: 10px 15px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#change-kaguya:hover {
+    transform: scale(1.05);
+}
+
+#jumpscare-container {
+    position: fixed; /* Fixe le conteneur à l'écran */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-color: black; /* Fond noir pour plus d'effet */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    z-index: 1000; /* Assure que le jumpscare est au-dessus de tout */
+    opacity: 0; /* Démarre invisible */
+    transition: opacity 0.1s ease; /* Transition pour l'apparition et la disparition */
+    pointer-events: none;
+}
+
+#jumpscare-container.active {
+    opacity: 1; /* Rend le jumpscare visible */
+}
+
+.jumpscare-image {
+    max-width: 100%; /* Prend toute la largeur disponible */
+    max-height: 100%; /* Prend toute la hauteur disponible */
+    object-fit: contain; /* Ajuste l'image à l'écran sans la déformer */
+}
+
+/* Dark Mode */
+body.dark-mode #theme-toggle {
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+
+}
+
+body.dark-mode {
+    background-image: url("./images/symbol-scatter-haikei-dark.svg");
+    background-position: center;
+    background-attachment: fixed;
+    color: #f0f0f0;
+}
+
+body.dark-mode .kaguya {
+    border: solid 2px #ffffff;
+}
+
+body.dark-mode .score {
+    color: #f0f0f0;
+}
+
+body.dark-mode .item {
+    border: 1px solid #f0f0f0;
+}
+
+
+body.yukari::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("./images/yukarigap.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body.yukari.active::before {
+    opacity: 1;
+}
