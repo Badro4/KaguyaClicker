@@ -6,7 +6,7 @@ let upgrades = [
     { 
         id: 1,
         name: "Tasukete ERIIIIN",
-        description: "Obtain +2 Clicks", 
+        description: "+2 Score per Click", 
         cost: 20, 
         effect: 2 
        },
@@ -66,6 +66,9 @@ function generateShopItems() {
                 document.getElementById('score').textContent = score; // Met à jour l'affichage du score
                 applyUpgrade(upgrade); // Applique l'upgrade
                 info.innerHTML = `Obtained : ${upgrade.name}`
+                setTimeout(() => {
+                    info.innerHTML= ""
+                },2000)
             } else {
                 info.innerHTML="Not Enough Points !";
             }
@@ -149,8 +152,7 @@ function applyUpgrade(upgrade) {
             yukariAudio.play();
             body.classList.add("yukari")
             add*=2
-            themeToggle.disabled=true
-            themeToggle.classList.add("disabled");
+            themeToggle.classList.add("hidden");
 
             setTimeout(() => {
                 document.body.classList.add("active");
@@ -169,7 +171,7 @@ function applyUpgrade(upgrade) {
 
                 body.classList.add(isDark ? "dark-mode" : "light-mode");
                 themeToggle.disabled=false
-                themeToggle.classList.remove("disabled");
+                themeToggle.classList.remove("hidden");
                 add=add/2
                 info.innerHTML = "Yukari disappears into the void"
             }, 12000)
