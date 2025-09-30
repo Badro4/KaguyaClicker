@@ -1,6 +1,6 @@
 ## Kaguya Clicker
 
-Cookie Clicker but Kaguya
+![](https://files.catbox.moe/ocfkb8.gif)
 
 ## Disclaimer
 
