@@ -12,7 +12,7 @@ let upgrades = [
        },
     {   
         id: 2, 
-        name: "BUNNY CUNNY", 
+        name: "Bunny", 
         description: "+1 Score per second", 
         cost: 50,
         effect: 1 
